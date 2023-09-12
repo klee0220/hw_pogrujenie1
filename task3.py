@@ -12,6 +12,17 @@
 #         duplicate.append(item)
 # print(duplicate)
 
+# import random
+#
+# lst = [random.randint(0, 10) for _ in range(20)]
+# print(lst)
+# duplicate = []
+# for item in set(lst):
+#     if lst.count(item) == 2: # != 1
+#         duplicate.append(item)
+# print(duplicate)
+
+
 '''
 ✔ В большой текстовой строке подсчитать количество встречаемых
 слов и вернуть 10 самых частых. Не учитывать знаки препинания
@@ -44,6 +55,26 @@
 #
 # print(top_10_words(text))
 
+# Variant #2
+
+# text = 'inviuerhkv vjieromvk joiemrocoe oerrjfierjoi  nforenmokf nmkomerokmcoi moe3rfm'
+#
+# words = []
+# word = ''
+#
+# for ch in text.lower():
+#     if ch.isalpha():
+#         word += ch
+#     else:
+#         if word:
+#             words.append(word)
+#         word = ''
+# else:
+#     words.append(word)
+#
+# word_count = sorted([(words.count(word), word) for word in set(words)], reverse=True)
+# for i in range(3):
+#     print(f'{i+1}. {word_count[i][1]: <10} - {word_count[i][0]}')
 
 
 '''
