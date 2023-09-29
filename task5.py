@@ -25,6 +25,14 @@
 абсолютный путь до файла. Функция возвращает кортеж из трёх
 элементов: путь, имя файла, расширение файла.
 '''
+# Reshenie Stone
+# import os
+#
+# def spl(path: str) -> tuple[str]:
+#     return os.path.split(path)[0], *os.path.split(path)[-1].split('.')
+# print(spl('/home/klee/PycharmProjects/hw_pogrujenie/task4.py'))
+#
+
 # import os
 #
 #
@@ -46,9 +54,21 @@
 на вход три списка одинаковой длины: имена str, ставка int,
 премия str с указанием процентов вида «10.25%». В результате
 получаем словарь с именем в качестве ключа и суммой
-премии в качестве значения. Сумма рассчитывается
-как ставка умноженная на процент премии
+премии в качестве значения. Сумма рассчитываеткак ставка умноженная на процент премии
 '''
+# Reshenie Stone
+# name_list = ['Stone', 'Adr', 'Fil']
+# salary_list = [15000, 20000, 30000]
+# bonus_list = ['5.5%', '10.5%', '30%']
+#
+#
+# def c_b_l(name: str, salary: int, bonus: str) -> dict[str, float]:
+#     return {item[0]: item[1] / 100 * float(item[2][:-1]) for item in zip(name, salary, bonus)}
+#
+#
+# print(c_b_l(name_list, salary_list, bonus_list))
+
+
 # def main(names_list, rates_list, premium_list):
 #     return {name: rate * (1 + float(prem.strip('%'))) for name, rate, prem in zip(names_list, rates_list, premium_list)}
 #
@@ -62,6 +82,19 @@
 '''
 ✔ Создайте функцию генератор чисел Фибоначчи (см. Википедию).
 '''
+#Reshenie Stoun
+# def fib(num: int = 10) -> int:
+#     first, second = 0, 1
+#     while num > 0:
+#         yield first
+#         first, second = second, first + second
+#         num -= 1
+#
+#
+# for i in fib(10):
+#     print(i)
+
+
 
 # def fib(n):
 #     a, b = 0, 1
