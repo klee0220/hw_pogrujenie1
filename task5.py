@@ -5,40 +5,48 @@
 нацело только на единицу и на себя».
 '''
 
-def prime_num(x):
-    prs = {}
-    p = 1
-    while p < x:
-        if p not in prs:
-            yield p
-            prs[p * p] = [p]
-        else:
-            for s in prs[p]:
-                prs.setdefault(s + p, []).append(s)
-            del prs[p]
-        p += 1
-
-
-print(*prime_num(50))
+# def prime_num(x):
+#     prs = {}
+#     p = 1
+#     while p < x:
+#         if p not in prs:
+#             yield p
+#             prs[p * p] = [p]
+#         else:
+#             for s in prs[p]:
+#                 prs.setdefault(s + p, []).append(s)
+#             del prs[p]
+#         p += 1
+#
+#
+# print(*prime_num(50))
 '''
 ✔ Напишите функцию, которая принимает на вход строку —
 абсолютный путь до файла. Функция возвращает кортеж из трёх
 элементов: путь, имя файла, расширение файла.
 '''
-import os
+# Reshenie Stone
+# import os
+#
+# def spl(path: str) -> tuple[str]:
+#     return os.path.split(path)[0], *os.path.split(path)[-1].split('.')
+# print(spl('/home/klee/PycharmProjects/hw_pogrujenie/task4.py'))
+#
 
-
-def main(user_path):
-    file_name = os.path.basename(user_path)
-    path_to_file = os.path.dirname(user_path)
-    file_extension = os.path.splitext(user_path)[1]
-    return (path_to_file, file_name, file_extension)
-
-
-if __name__ == '__main__':
-    # path_from_user = input('Enter an absolute path to file: ')
-    path_from_user = '/home/klee/PycharmProjects/task5.py'
-    print(main(user_path=path_from_user))
+# import os
+#
+#
+# def main(user_path):
+#     file_name = os.path.basename(user_path)
+#     path_to_file = os.path.dirname(user_path)
+#     file_extension = os.path.splitext(user_path)[1]
+#     return (path_to_file, file_name, file_extension)
+#
+#
+# if __name__ == '__main__':
+#     # path_from_user = input('Enter an absolute path to file: ')
+#     path_from_user = '/home/klee/PycharmProjects/task5.py'
+#     print(main(user_path=path_from_user))
 
 
 '''
@@ -46,30 +54,55 @@ if __name__ == '__main__':
 на вход три списка одинаковой длины: имена str, ставка int,
 премия str с указанием процентов вида «10.25%». В результате
 получаем словарь с именем в качестве ключа и суммой
-премии в качестве значения. Сумма рассчитывается
-как ставка умноженная на процент премии
+премии в качестве значения. Сумма рассчитываеткак ставка умноженная на процент премии
 '''
-def main(names_list, rates_list, premium_list):
-    return {name: rate * (1 + float(prem.strip('%'))) for name, rate, prem in zip(names_list, rates_list, premium_list)}
+# Reshenie Stone
+# name_list = ['Stone', 'Adr', 'Fil']
+# salary_list = [15000, 20000, 30000]
+# bonus_list = ['5.5%', '10.5%', '30%']
+#
+#
+# def c_b_l(name: str, salary: int, bonus: str) -> dict[str, float]:
+#     return {item[0]: item[1] / 100 * float(item[2][:-1]) for item in zip(name, salary, bonus)}
+#
+#
+# print(c_b_l(name_list, salary_list, bonus_list))
 
 
-if __name__ == '__main__':
-    names = ['John', 'Kate', 'Gabriel']
-    rates = [0.5, 1, 1.5]
-    premium = ['11.15%', '12.25%', '13.35%']
-    print(main(names, rates, premium))
+# def main(names_list, rates_list, premium_list):
+#     return {name: rate * (1 + float(prem.strip('%'))) for name, rate, prem in zip(names_list, rates_list, premium_list)}
+#
+#
+# if __name__ == '__main__':
+#     names = ['John', 'Kate', 'Gabriel']
+#     rates = [0.5, 1, 1.5]
+#     premium = ['11.15%', '12.25%', '13.35%']
+#     print(main(names, rates, premium))
 
 '''
 ✔ Создайте функцию генератор чисел Фибоначчи (см. Википедию).
 '''
+#Reshenie Stoun
+# def fib(num: int = 10) -> int:
+#     first, second = 0, 1
+#     while num > 0:
+#         yield first
+#         first, second = second, first + second
+#         num -= 1
+#
+#
+# for i in fib(10):
+#     print(i)
 
-def fib(n):
-    a, b = 0, 1
-    for _ in range(n):
-        yield a
-        a, b = b, a + b
 
 
-if __name__ == '__main__':
-    number = int(input('Give amount: '))
-    print(list(fib(number)))
+# def fib(n):
+#     a, b = 0, 1
+#     for _ in range(n):
+#         yield a
+#         a, b = b, a + b
+#
+#
+# if __name__ == '__main__':
+#     number = int(input('Give amount: '))
+#     print(list(fib(number)))
